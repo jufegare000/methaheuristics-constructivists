@@ -1,0 +1,390 @@
+{
+  "Surgeries": [
+    "C0",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C19",
+    "C20",
+    "C21",
+    "C22",
+    "C23",
+    "C24",
+    "C25",
+    "C26",
+    "C27",
+    "C28",
+    "C29"
+  ],
+  "Rooms": [
+    "R0",
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6"
+  ],
+  "Days": [
+    "L",
+    "Ma",
+    "Mi",
+    "J",
+    "V"
+  ],
+  "Blocks": [
+    "AM",
+    "PM"
+  ],
+  "Types": [
+    "Cardio",
+    "Orto",
+    "Neuro",
+    "General",
+    "Uro",
+    "Gineco",
+    "Oftalmo"
+  ],
+  "Departments": [
+    "Dep0",
+    "Dep1",
+    "Dep2",
+    "Dep3"
+  ],
+  "Zones": [
+    "Z0",
+    "Z1",
+    "Z2"
+  ],
+  "Surgeons": [
+    "Sg0",
+    "Sg1",
+    "Sg2",
+    "Sg3",
+    "Sg4",
+    "Sg5",
+    "Sg6",
+    "Sg7",
+    "Sg8",
+    "Sg9"
+  ],
+  "Type_Surgery": {
+    "C0": "Orto",
+    "C1": "Uro",
+    "C2": "Cardio",
+    "C3": "Gineco",
+    "C4": "Gineco",
+    "C5": "Cardio",
+    "C6": "Neuro",
+    "C7": "Gineco",
+    "C8": "Gineco",
+    "C9": "Orto",
+    "C10": "General",
+    "C11": "Orto",
+    "C12": "Orto",
+    "C13": "Orto",
+    "C14": "Cardio",
+    "C15": "Neuro",
+    "C16": "Gineco",
+    "C17": "Orto",
+    "C18": "Oftalmo",
+    "C19": "General",
+    "C20": "Neuro",
+    "C21": "Orto",
+    "C22": "Uro",
+    "C23": "Cardio",
+    "C24": "Uro",
+    "C25": "Orto",
+    "C26": "Oftalmo",
+    "C27": "Uro",
+    "C28": "Neuro",
+    "C29": "General"
+  },
+  "Rooms_Type": {
+    "Cardio": [
+      "R3"
+    ],
+    "Orto": [
+      "R3"
+    ],
+    "Neuro": [
+      "R3",
+      "R5",
+      "R6"
+    ],
+    "General": [
+      "R1"
+    ],
+    "Uro": [
+      "R0",
+      "R2"
+    ],
+    "Gineco": [
+      "R0",
+      "R4"
+    ],
+    "Oftalmo": [
+      "R0"
+    ]
+  },
+  "Rooms_Z": {
+    "R0": "Z1",
+    "R1": "Z1",
+    "R2": "Z2",
+    "R3": "Z1",
+    "R4": "Z2",
+    "R5": "Z2",
+    "R6": "Z1"
+  },
+  "Type_Surgeon": {
+    "Sg0": [
+      "Orto"
+    ],
+    "Sg1": [
+      "Oftalmo"
+    ],
+    "Sg2": [
+      "General"
+    ],
+    "Sg3": [
+      "Oftalmo"
+    ],
+    "Sg4": [
+      "Oftalmo"
+    ],
+    "Sg5": [
+      "Uro",
+      "Cardio"
+    ],
+    "Sg6": [
+      "Orto"
+    ],
+    "Sg7": [
+      "Neuro"
+    ],
+    "Sg8": [
+      "Gineco"
+    ],
+    "Sg9": [
+      "General"
+    ]
+  },
+  "Dept_Surgeon": {
+    "Dep0": [
+      "Sg5",
+      "Sg8"
+    ],
+    "Dep1": [
+      "Sg4"
+    ],
+    "Dep2": [
+      "Sg1",
+      "Sg2",
+      "Sg3",
+      "Sg7",
+      "Sg9"
+    ],
+    "Dep3": [
+      "Sg0",
+      "Sg6"
+    ]
+  },
+  "Days_Surgery": {
+    "C0": [
+      "J",
+      "Ma"
+    ],
+    "C1": [
+      "J",
+      "Ma",
+      "Mi"
+    ],
+    "C2": [
+      "L",
+      "Mi",
+      "V"
+    ],
+    "C3": [
+      "L",
+      "V"
+    ],
+    "C4": [
+      "J",
+      "V"
+    ],
+    "C5": [
+      "J",
+      "Mi"
+    ],
+    "C6": [
+      "J",
+      "Ma",
+      "Mi"
+    ],
+    "C7": [
+      "L",
+      "Ma",
+      "V"
+    ],
+    "C8": [
+      "L",
+      "Ma"
+    ],
+    "C9": [
+      "L",
+      "Mi"
+    ],
+    "C10": [
+      "L",
+      "Ma"
+    ],
+    "C11": [
+      "Ma",
+      "Mi",
+      "V"
+    ],
+    "C12": [
+      "L",
+      "Mi",
+      "V"
+    ],
+    "C13": [
+      "J",
+      "Mi"
+    ],
+    "C14": [
+      "J",
+      "L"
+    ],
+    "C15": [
+      "J",
+      "Ma",
+      "Mi"
+    ],
+    "C16": [
+      "L",
+      "Mi",
+      "V"
+    ],
+    "C17": [
+      "J",
+      "L"
+    ],
+    "C18": [
+      "J",
+      "Ma",
+      "Mi"
+    ],
+    "C19": [
+      "L",
+      "Ma",
+      "V"
+    ],
+    "C20": [
+      "J",
+      "Mi",
+      "V"
+    ],
+    "C21": [
+      "J",
+      "L"
+    ],
+    "C22": [
+      "Ma",
+      "Mi",
+      "V"
+    ],
+    "C23": [
+      "J",
+      "Ma",
+      "Mi"
+    ],
+    "C24": [
+      "L",
+      "Ma",
+      "V"
+    ],
+    "C25": [
+      "J",
+      "Mi"
+    ],
+    "C26": [
+      "J",
+      "L",
+      "Mi"
+    ],
+    "C27": [
+      "Ma",
+      "Mi"
+    ],
+    "C28": [
+      "L",
+      "V"
+    ],
+    "C29": [
+      "L",
+      "V"
+    ]
+  },
+  "Days_Surgeon": {
+    "Sg0": [
+      "L",
+      "Mi"
+    ],
+    "Sg1": [
+      "L",
+      "Ma",
+      "Mi"
+    ],
+    "Sg2": [
+      "J",
+      "Ma",
+      "V"
+    ],
+    "Sg3": [
+      "J",
+      "Mi"
+    ],
+    "Sg4": [
+      "J",
+      "V"
+    ],
+    "Sg5": [
+      "J",
+      "L"
+    ],
+    "Sg6": [
+      "J",
+      "L",
+      "Ma"
+    ],
+    "Sg7": [
+      "Ma",
+      "V"
+    ],
+    "Sg8": [
+      "J",
+      "Mi",
+      "V"
+    ],
+    "Sg9": [
+      "J",
+      "L"
+    ]
+  }
+}

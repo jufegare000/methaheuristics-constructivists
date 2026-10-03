@@ -1,0 +1,322 @@
+{
+  "Surgeries": [
+    "C0",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C19",
+    "C20",
+    "C21",
+    "C22",
+    "C23",
+    "C24",
+    "C25",
+    "C26",
+    "C27",
+    "C28",
+    "C29"
+  ],
+  "Rooms": [
+    "R0",
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "Days": [
+    "L",
+    "Ma",
+    "Mi",
+    "J",
+    "V"
+  ],
+  "Blocks": [
+    "AM",
+    "PM"
+  ],
+  "Types": [
+    "Cardio",
+    "Orto",
+    "Neuro",
+    "General",
+    "Uro",
+    "Gineco",
+    "Oftalmo"
+  ],
+  "Departments": [
+    "Dep0",
+    "Dep1",
+    "Dep2",
+    "Dep3"
+  ],
+  "Zones": [
+    "Z0",
+    "Z1",
+    "Z2"
+  ],
+  "Surgeons": [
+    "Sg0",
+    "Sg1",
+    "Sg2",
+    "Sg3",
+    "Sg4",
+    "Sg5",
+    "Sg6"
+  ],
+  "Type_Surgery": {
+    "C0": "Neuro",
+    "C1": "Cardio",
+    "C2": "Oftalmo",
+    "C3": "Cardio",
+    "C4": "General",
+    "C5": "Gineco",
+    "C6": "Neuro",
+    "C7": "Oftalmo",
+    "C8": "Oftalmo",
+    "C9": "Oftalmo",
+    "C10": "Oftalmo",
+    "C11": "Uro",
+    "C12": "Cardio",
+    "C13": "Cardio",
+    "C14": "Orto",
+    "C15": "Uro",
+    "C16": "Uro",
+    "C17": "Cardio",
+    "C18": "General",
+    "C19": "General",
+    "C20": "General",
+    "C21": "Cardio",
+    "C22": "Cardio",
+    "C23": "General",
+    "C24": "Uro",
+    "C25": "Orto",
+    "C26": "Orto",
+    "C27": "General",
+    "C28": "Gineco",
+    "C29": "Cardio"
+  },
+  "Rooms_Type": {
+    "Cardio": [
+      "R4"
+    ],
+    "Orto": [
+      "R0"
+    ],
+    "Neuro": [
+      "R0"
+    ],
+    "General": [
+      "R3"
+    ],
+    "Uro": [
+      "R2"
+    ],
+    "Gineco": [
+      "R1",
+      "R4"
+    ],
+    "Oftalmo": [
+      "R0"
+    ]
+  },
+  "Rooms_Z": {
+    "R0": "Z0",
+    "R1": "Z2",
+    "R2": "Z0",
+    "R3": "Z1",
+    "R4": "Z2"
+  },
+  "Type_Surgeon": {
+    "Sg0": [
+      "Oftalmo",
+      "Orto"
+    ],
+    "Sg1": [
+      "Neuro",
+      "Cardio"
+    ],
+    "Sg2": [
+      "Neuro",
+      "Gineco"
+    ],
+    "Sg3": [
+      "Uro"
+    ],
+    "Sg4": [
+      "Oftalmo"
+    ],
+    "Sg5": [
+      "Oftalmo"
+    ],
+    "Sg6": [
+      "General"
+    ]
+  },
+  "Dept_Surgeon": {
+    "Dep0": [
+      "Sg0",
+      "Sg5",
+      "Sg6"
+    ],
+    "Dep1": [
+      "Sg1"
+    ],
+    "Dep2": [
+      "Sg2"
+    ],
+    "Dep3": [
+      "Sg3",
+      "Sg4"
+    ]
+  },
+  "Days_Surgery": {
+    "C0": [
+      "V"
+    ],
+    "C1": [
+      "J",
+      "V"
+    ],
+    "C2": [
+      "L",
+      "Mi"
+    ],
+    "C3": [
+      "Mi"
+    ],
+    "C4": [
+      "Mi"
+    ],
+    "C5": [
+      "J"
+    ],
+    "C6": [
+      "J",
+      "Mi"
+    ],
+    "C7": [
+      "Mi"
+    ],
+    "C8": [
+      "L"
+    ],
+    "C9": [
+      "J",
+      "Mi"
+    ],
+    "C10": [
+      "J",
+      "V"
+    ],
+    "C11": [
+      "Mi"
+    ],
+    "C12": [
+      "Mi"
+    ],
+    "C13": [
+      "J",
+      "V"
+    ],
+    "C14": [
+      "J",
+      "Mi"
+    ],
+    "C15": [
+      "Ma"
+    ],
+    "C16": [
+      "J"
+    ],
+    "C17": [
+      "L",
+      "Ma"
+    ],
+    "C18": [
+      "V"
+    ],
+    "C19": [
+      "Ma",
+      "V"
+    ],
+    "C20": [
+      "J",
+      "V"
+    ],
+    "C21": [
+      "Mi"
+    ],
+    "C22": [
+      "Mi"
+    ],
+    "C23": [
+      "Ma"
+    ],
+    "C24": [
+      "Mi"
+    ],
+    "C25": [
+      "L",
+      "V"
+    ],
+    "C26": [
+      "Mi"
+    ],
+    "C27": [
+      "L",
+      "Mi"
+    ],
+    "C28": [
+      "L",
+      "Ma"
+    ],
+    "C29": [
+      "Ma"
+    ]
+  },
+  "Days_Surgeon": {
+    "Sg0": [
+      "L",
+      "Ma"
+    ],
+    "Sg1": [
+      "Mi",
+      "V"
+    ],
+    "Sg2": [
+      "L",
+      "Ma"
+    ],
+    "Sg3": [
+      "J",
+      "L"
+    ],
+    "Sg4": [
+      "L",
+      "Mi"
+    ],
+    "Sg5": [
+      "Ma",
+      "V"
+    ],
+    "Sg6": [
+      "J",
+      "Ma"
+    ]
+  }
+}

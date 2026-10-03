@@ -1,0 +1,342 @@
+{
+  "Surgeries": [
+    "C0",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C19",
+    "C20",
+    "C21",
+    "C22",
+    "C23",
+    "C24",
+    "C25",
+    "C26",
+    "C27",
+    "C28",
+    "C29"
+  ],
+  "Rooms": [
+    "R0",
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "Days": [
+    "L",
+    "Ma",
+    "Mi",
+    "J",
+    "V"
+  ],
+  "Blocks": [
+    "AM",
+    "PM"
+  ],
+  "Types": [
+    "Cardio",
+    "Orto",
+    "Neuro",
+    "General",
+    "Uro",
+    "Gineco",
+    "Oftalmo",
+    "Plastica"
+  ],
+  "Departments": [
+    "Dep0",
+    "Dep1",
+    "Dep2",
+    "Dep3",
+    "Dep4"
+  ],
+  "Zones": [
+    "Z0",
+    "Z1",
+    "Z2"
+  ],
+  "Surgeons": [
+    "Sg0",
+    "Sg1",
+    "Sg2",
+    "Sg3",
+    "Sg4",
+    "Sg5",
+    "Sg6",
+    "Sg7"
+  ],
+  "Type_Surgery": {
+    "C0": "Oftalmo",
+    "C1": "Orto",
+    "C2": "Plastica",
+    "C3": "Neuro",
+    "C4": "Uro",
+    "C5": "Cardio",
+    "C6": "Cardio",
+    "C7": "Plastica",
+    "C8": "Plastica",
+    "C9": "Plastica",
+    "C10": "Plastica",
+    "C11": "Oftalmo",
+    "C12": "Gineco",
+    "C13": "Oftalmo",
+    "C14": "Oftalmo",
+    "C15": "Cardio",
+    "C16": "Gineco",
+    "C17": "Oftalmo",
+    "C18": "Uro",
+    "C19": "Cardio",
+    "C20": "Cardio",
+    "C21": "Plastica",
+    "C22": "Orto",
+    "C23": "Neuro",
+    "C24": "Gineco",
+    "C25": "Uro",
+    "C26": "General",
+    "C27": "Uro",
+    "C28": "Neuro",
+    "C29": "Neuro"
+  },
+  "Rooms_Type": {
+    "Cardio": [
+      "R3"
+    ],
+    "Orto": [
+      "R2",
+      "R4"
+    ],
+    "Neuro": [
+      "R0"
+    ],
+    "General": [
+      "R1",
+      "R3"
+    ],
+    "Uro": [
+      "R1"
+    ],
+    "Gineco": [
+      "R4"
+    ],
+    "Oftalmo": [
+      "R0"
+    ],
+    "Plastica": [
+      "R4"
+    ]
+  },
+  "Rooms_Z": {
+    "R0": "Z0",
+    "R1": "Z0",
+    "R2": "Z1",
+    "R3": "Z0",
+    "R4": "Z2"
+  },
+  "Type_Surgeon": {
+    "Sg0": [
+      "Plastica",
+      "Cardio"
+    ],
+    "Sg1": [
+      "Neuro"
+    ],
+    "Sg2": [
+      "Neuro"
+    ],
+    "Sg3": [
+      "General"
+    ],
+    "Sg4": [
+      "Plastica"
+    ],
+    "Sg5": [
+      "Gineco"
+    ],
+    "Sg6": [
+      "Oftalmo",
+      "Uro"
+    ],
+    "Sg7": [
+      "Orto"
+    ]
+  },
+  "Dept_Surgeon": {
+    "Dep0": [
+      "Sg4"
+    ],
+    "Dep1": [
+      "Sg5"
+    ],
+    "Dep2": [
+      "Sg2",
+      "Sg3"
+    ],
+    "Dep3": [
+      "Sg1",
+      "Sg7"
+    ],
+    "Dep4": [
+      "Sg0",
+      "Sg6"
+    ]
+  },
+  "Days_Surgery": {
+    "C0": [
+      "J",
+      "Ma"
+    ],
+    "C1": [
+      "J"
+    ],
+    "C2": [
+      "Ma",
+      "V"
+    ],
+    "C3": [
+      "L",
+      "Ma"
+    ],
+    "C4": [
+      "J"
+    ],
+    "C5": [
+      "J"
+    ],
+    "C6": [
+      "L",
+      "V"
+    ],
+    "C7": [
+      "J",
+      "Mi"
+    ],
+    "C8": [
+      "L",
+      "V"
+    ],
+    "C9": [
+      "L",
+      "Ma"
+    ],
+    "C10": [
+      "J",
+      "V"
+    ],
+    "C11": [
+      "Ma"
+    ],
+    "C12": [
+      "L"
+    ],
+    "C13": [
+      "Ma"
+    ],
+    "C14": [
+      "V"
+    ],
+    "C15": [
+      "L",
+      "V"
+    ],
+    "C16": [
+      "J"
+    ],
+    "C17": [
+      "L"
+    ],
+    "C18": [
+      "L",
+      "V"
+    ],
+    "C19": [
+      "Ma",
+      "Mi"
+    ],
+    "C20": [
+      "Ma"
+    ],
+    "C21": [
+      "L",
+      "V"
+    ],
+    "C22": [
+      "Mi",
+      "V"
+    ],
+    "C23": [
+      "L",
+      "Ma"
+    ],
+    "C24": [
+      "J"
+    ],
+    "C25": [
+      "L"
+    ],
+    "C26": [
+      "Ma",
+      "Mi"
+    ],
+    "C27": [
+      "V"
+    ],
+    "C28": [
+      "L",
+      "V"
+    ],
+    "C29": [
+      "Ma",
+      "Mi"
+    ]
+  },
+  "Days_Surgeon": {
+    "Sg0": [
+      "Ma",
+      "V"
+    ],
+    "Sg1": [
+      "J",
+      "Ma"
+    ],
+    "Sg2": [
+      "J",
+      "Mi"
+    ],
+    "Sg3": [
+      "Mi",
+      "V"
+    ],
+    "Sg4": [
+      "Ma",
+      "Mi"
+    ],
+    "Sg5": [
+      "L",
+      "V"
+    ],
+    "Sg6": [
+      "Ma",
+      "V"
+    ],
+    "Sg7": [
+      "Ma",
+      "Mi"
+    ]
+  }
+}
