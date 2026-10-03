@@ -1,3 +1,102 @@
-\section{Results}
+\section{Resultados}
 \label{sec:results}
 
+
+Los experimentos se realizaron sobre las 10 instancias del taller, con entre 18 y 34 cirugías cada una. GRASP y LNS se ejecutaron con 5 semillas independientes por instancia, y se reporta la mejor solución según la tupla $(N,-D,-M)$. El modelo exacto probó optimalidad en las 10 instancias.
+
+\subsection{Calidad de las soluciones}
+
+La Tabla~\ref{tab:calidad} presenta, para cada instancia y método, el número de cirugías programadas $N$ y la dispersión $D$ en la forma $N/D$.
+
+\begin{table}[t]
+	\caption{Cirugías programadas y dispersión ($N/D$) por instancia y método}
+	\label{tab:calidad}
+	\centering
+	\footnotesize
+	\setlength{\tabcolsep}{3.5pt}
+	\begin{tabular}{@{}rrcccccc@{}}
+		\hline
+		Inst. & $|S|$ & Óptimo & Constr. & VND & GRASP & LNS \\
+		\hline
+		1  & 18 & 18/0 & 18/1 & 18/0 & 18/0 & 18/0 \\
+		2  & 20 & 20/0 & 20/1 & 20/0 & 20/0 & 20/0 \\
+		3  & 26 & 24/0 & 24/1 & 24/1 & 24/0 & 24/0 \\
+		4  & 28 & 18/1 & 17/1 & 18/1 & 18/1 & 18/1 \\
+		5  & 30 & 23/0 & 21/1 & 23/1 & 23/0 & 23/0 \\
+		6  & 30 & 14/0 & 14/0 & 14/0 & 14/0 & 14/0 \\
+		7  & 30 & 14/1 & 14/2 & 14/2 & 14/1 & 14/1 \\
+		8  & 32 & 12/3 & 12/3 & 12/3 & 12/3 & 12/3 \\
+		9  & 30 & 15/0 & 15/1 & 15/1 & 15/0 & 15/0 \\
+		10 & 34 & 20/1 & 20/3 & 20/2 & 20/1 & 20/1 \\
+		\hline
+		Total & 278 & 178/6 & 175/14 & 178/11 & 178/6 & 178/6 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\paragraph*{Ocupación.} El óptimo programa 178 de las 278 cirugías (64\,\%). Las instancias 1 y 2 se programan por completo y la 3 al 92\,\%, mientras que en las instancias 6 a 10 solo se programa entre el 38\,\% y el 59\,\%, por lo que en ellas los recursos, y no el método, limitan el resultado.
+
+\paragraph*{GRASP y LNS.} Ambos alcanzaron el óptimo lexicográfico en las 10 instancias: brecha de 0\,\% en $N$ y la misma dispersión mínima que el modelo exacto ($D=6$ en total). En ambos métodos, las 5 semillas alcanzaron el mismo valor de $N$ en cada instancia.
+
+\paragraph*{Constructivo.} Alcanzó el $N$ óptimo en 8 de las 10 instancias; en la instancia~4 programó una cirugía menos que el óptimo y en la~5, dos menos. Su dispersión total fue de 14, frente a 6 del óptimo, y solo en las instancias 6 y 8 coincidió con el óptimo lexicográfico.
+
+\paragraph*{VND.} La búsqueda local cerró la diferencia en $N$ del constructivo y alcanzó el óptimo en las 10 instancias. En dispersión, en cambio, redujo el total de 14 a 11 sin llegar al óptimo, y coincidió con el óptimo lexicográfico en 5 de las 10 instancias (1, 2, 4, 6 y 8). Esto sugiere que los vecindarios N1 a N4, orientados a $N$, bastan en estas instancias, mientras que N5 y N6 dejan al VND atrapado en óptimos locales de dispersión que GRASP y LNS sí superan.
+
+\subsection{Tiempos de cómputo}
+
+La Tabla~\ref{tab:tiempos} resume los tiempos por método. Para GRASP y LNS se promedian las 5 semillas de cada instancia. El tiempo del VND corresponde a la búsqueda local partiendo del constructivo, y el del LNS, a la ejecución partiendo de la solución del VND. El tiempo de HiGHS incluye las dos etapas del modelo exacto.
+
+\begin{table}[t]
+	\caption{Tiempo de cómputo por método (s), sobre las 10 instancias}
+	\label{tab:tiempos}
+	\centering
+	\small
+	\begin{tabular}{@{}lccc@{}}
+		\hline
+		Método & Media & Mínimo & Máximo \\
+		\hline
+		Constructivo            & 0,006 & 0,001 & 0,021 \\
+		VND (desde constructivo)& 0,017 & 0,001 & 0,087 \\
+		GRASP                   & 0,131 & 0,055 & 0,295 \\
+		LNS (desde VND)         & 1,886 & 0,352 & 7,484 \\
+		HiGHS (dos etapas)      & 0,097 & 0,015 & 0,423 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+El constructivo y el VND resolvieron todas las instancias en menos de 0,1\,s. GRASP tardó en promedio 0,13\,s. El LNS fue el más lento (1,9\,s en promedio), pero este promedio está dominado por las instancias 1 y 2 (7,5\,s y 6,4\,s); en las ocho restantes, el promedio es de 0,62\,s. Ambas instancias son aquellas en las que se programan todas las cirugías: GRASP se detiene en cuanto programa todas con dispersión cero, mientras que el LNS ejecuta siempre sus 200 iteraciones.
+
+El modelo exacto fue más rápido que el LNS en las 10 instancias y más rápido que GRASP en 8; en las instancias 1 y 2 fue donde HiGHS tardó más (0,42\,s y 0,40\,s) y GRASP lo superó. En ningún caso HiGHS superó 0,5\,s.
+
+\subsection{Junta clínica}
+
+Para cada departamento se calculó el día común de menor costo (primero, menos cirugías bloqueadas; luego, menos cirugías afectadas), se retiró ese día de la disponibilidad de sus cirujanos y se volvió a resolver la instancia. Como ejemplo, en la instancia~1 reservar un día afecta entre 5 y 7 cirugías para Dep0, entre 3 y 5 para Dep1 y entre 14 y 18 para Dep2, y en ningún caso una cirugía queda sin opciones. Si los cirujanos de un departamento no comparten ningún día disponible, no se le reserva junta.
+
+\begin{table}[t]
+	\caption{Efecto de reservar la junta clínica de cada departamento}
+	\label{tab:junta}
+	\centering
+	\small
+	\begin{tabular}{@{}rcccc@{}}
+		\hline
+		Inst. & $N$ sin junta & $N$ con junta & Pérdida & $D$ (sin/con) \\
+		\hline
+		1  & 18 & 18 & 0 & 0/0 \\
+		2  & 20 & 20 & 0 & 0/0 \\
+		3  & 24 & 24 & 0 & 0/0 \\
+		4  & 18 & 18 & 0 & 1/1 \\
+		5  & 23 & 20 & 3 & 0/0 \\
+		6  & 14 & 12 & 2 & 0/0 \\
+		7  & 14 & 10 & 4 & 1/1 \\
+		8  & 12 & 11 & 1 & 3/3 \\
+		9  & 15 & 7  & 8 & 0/0 \\
+		10 & 20 & 16 & 4 & 1/2 \\
+		\hline
+		Total & 178 & 156 & 22 & --- \\
+		\hline
+	\end{tabular}
+\end{table}
+
+Reservar la junta no tuvo costo en 4 de las 10 instancias (1 a 4). En total, las cirugías programadas pasan de 178 a 156, una pérdida de 22 (12,4\,\%). La pérdida es mayor en la instancia~9, donde se programan 7 cirugías en lugar de 15, y en las instancias 7 y 10, con 4 cirugías menos cada una. La dispersión se mantiene igual salvo en la instancia~10, donde sube de 1 a 2.
+
+Estos valores deben leerse como una cota superior del costo real de la junta: el día de cada departamento se elige de forma independiente con una regla voraz, y la solución con junta proviene de una sola semilla de GRASP y de LNS, sin validación con el modelo exacto.

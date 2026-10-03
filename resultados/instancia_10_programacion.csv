@@ -1,35 +1,35 @@
 cirugia,tipo,dia,bloque,sala,zona,cirujano,departamento,estado
 C30,Neuro,L,AM,R1,Z2,Sg5,Dep2,ok
-C32,General,L,AM,R2,Z0,Sg8,Dep1,ok
-C16,Cardio,L,AM,R4,Z0,Sg1,Dep0,ok
+C17,Cardio,L,AM,R4,Z0,Sg1,Dep0,ok
 C5,Orto,L,AM,R5,Z1,Sg2,Dep2,ok
-C17,Cardio,L,PM,R4,Z0,Sg1,Dep0,ok
+C32,General,L,PM,R2,Z0,Sg8,Dep1,ok
+C16,Cardio,L,PM,R4,Z0,Sg1,Dep0,ok
 C21,Plastica,L,PM,R5,Z1,Sg5,Dep2,ok
 C33,Uro,Ma,AM,R2,Z0,Sg0,Dep3,ok
-C7,Gineco,Ma,AM,R3,Z2,Sg4,Dep2,ok
 C13,Uro,Ma,PM,R2,Z0,Sg0,Dep3,ok
-C4,Gineco,Mi,AM,R3,Z2,Sg4,Dep2,ok
+C7,Gineco,Ma,PM,R3,Z2,Sg4,Dep2,ok
+C12,Gineco,Mi,AM,R3,Z2,Sg4,Dep2,ok
 C24,Gineco,Mi,PM,R3,Z2,Sg4,Dep2,ok
 C20,General,J,AM,R2,Z0,Sg8,Dep1,ok
 C6,Cardio,J,AM,R4,Z0,Sg1,Dep0,ok
-C29,Plastica,J,AM,R5,Z1,Sg5,Dep2,ok
-C19,Cardio,J,PM,R4,Z0,Sg1,Dep0,ok
-C31,Plastica,J,PM,R5,Z1,Sg5,Dep2,ok
+C1,Plastica,J,AM,R5,Z1,Sg5,Dep2,ok
+C18,Cardio,J,PM,R4,Z0,Sg1,Dep0,ok
+C29,Plastica,J,PM,R5,Z1,Sg5,Dep2,ok
 C15,Cardio,V,AM,R4,Z0,Sg0,Dep3,ok
 C0,Orto,V,AM,R5,Z1,Sg2,Dep2,ok
 C14,Uro,V,PM,R2,Z0,Sg0,Dep3,ok
 C8,Orto,V,PM,R5,Z1,Sg2,Dep2,ok
-C1,Plastica,,,,,,,SIN PROGRAMAR
 C2,Orto,,,,,,,SIN PROGRAMAR
 C3,Oftalmo,,,,,,,SIN PROGRAMAR
+C4,Gineco,,,,,,,SIN PROGRAMAR
 C9,Oftalmo,,,,,,,SIN PROGRAMAR
 C10,Uro,,,,,,,SIN PROGRAMAR
 C11,Plastica,,,,,,,SIN PROGRAMAR
-C12,Gineco,,,,,,,SIN PROGRAMAR
-C18,Cardio,,,,,,,SIN PROGRAMAR
+C19,Cardio,,,,,,,SIN PROGRAMAR
 C22,Orto,,,,,,,SIN PROGRAMAR
 C23,Oftalmo,,,,,,,SIN PROGRAMAR
 C25,General,,,,,,,SIN PROGRAMAR
 C26,Uro,,,,,,,SIN PROGRAMAR
 C27,Oftalmo,,,,,,,SIN PROGRAMAR
 C28,Plastica,,,,,,,SIN PROGRAMAR
+C31,Plastica,,,,,,,SIN PROGRAMAR

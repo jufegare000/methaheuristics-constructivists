@@ -12,8 +12,8 @@ C3,Orto,Mi,AM,R3,Z1,Sg8,Dep1,ok
 C17,Cardio,Mi,AM,R4,Z0,Sg0,Dep0,ok
 C11,General,Mi,PM,R0,Z0,Sg5,Dep2,ok
 C1,Neuro,Mi,PM,R2,Z0,Sg11,Dep2,ok
-C16,General,J,AM,R0,Z0,Sg5,Dep2,ok
-C5,Orto,J,AM,R1,Z0,Sg2,Dep2,ok
-C13,Orto,J,AM,R3,Z1,Sg8,Dep1,ok
-C15,Orto,J,AM,R4,Z0,Sg3,Dep0,ok
 C14,General,V,AM,R0,Z0,Sg5,Dep2,ok
+C5,Orto,V,AM,R1,Z0,Sg2,Dep2,ok
+C13,Orto,V,AM,R3,Z1,Sg8,Dep1,ok
+C15,Orto,V,AM,R4,Z0,Sg6,Dep2,ok
+C16,General,V,PM,R0,Z0,Sg5,Dep2,ok

@@ -1,2 +1,99 @@
-\section{Methodology}
+\section{Metodología}
 \label{sec:methodology}
+
+\subsection{Formulación del problema}
+
+Sean $S$ el conjunto de cirugías, $R$ las salas, $K$ los cirujanos, $D$ los días y $B$ los bloques (AM y PM). Para cada cirugía $s$ se define el conjunto $F_s$ de opciones factibles $(d,b,r,k)$. Una opción es factible si cumple cuatro condiciones: el día $d$ está entre los días en que $s$ puede programarse, la sala $r$ está equipada para el tipo de $s$, el cirujano $k$ está certificado para ese tipo y el cirujano está disponible el día $d$. La decisión se representa con variables binarias $x_{s,d,b,r,k}$, definidas solo para $(d,b,r,k)\in F_s$:
+
+\begin{equation}
+	\sum_{(d,b,r,k)\in F_s} x_{s,d,b,r,k} \le 1 \quad \forall s
+	\label{eq:cirugia}
+\end{equation}
+\begin{equation}
+	\sum_{s}\sum_{k} x_{s,d,b,r,k} \le 1 \quad \forall r,d,b
+	\label{eq:sala}
+\end{equation}
+\begin{equation}
+	\sum_{s}\sum_{r} x_{s,d,b,r,k} \le 1 \quad \forall k,d,b
+	\label{eq:cirujano}
+\end{equation}
+
+La restricción~\eqref{eq:cirugia} permite dejar una cirugía sin programar, \eqref{eq:sala} impide que una sala aloje dos cirugías en el mismo día y bloque, y \eqref{eq:cirujano} hace lo mismo con los cirujanos.
+
+El objetivo es lexicográfico y sus criterios se comparan en este orden:
+
+\begin{enumerate}
+	\item $N$: número de cirugías programadas (se maximiza).
+	\item $D$: dispersión, $D=\sum_{dep}\left(|Z_{dep}|-1\right)$, donde $Z_{dep}$ es el conjunto de zonas en que el departamento $dep$ tiene cirugías (se minimiza).
+	\item $M$: número de cirugías fuera de la zona mayoritaria de su departamento (se minimiza).
+\end{enumerate}
+
+Las soluciones se comparan como la tupla $(N,-D,-M)$. El tercer criterio existe porque $D$ solo cambia cuando un departamento deja de usar una zona, por lo que un movimiento individual casi nunca la modifica. En cambio, $M$ varía con cada movimiento y le da a la búsqueda local una señal para avanzar.
+
+\subsection{Heurística constructiva}
+
+El constructivo asigna una cirugía por iteración:
+
+\begin{enumerate}
+	\item \textbf{Selección.} Se escoge la cirugía pendiente con \emph{menos opciones factibles} en ese momento, recalculadas dinámicamente según la ocupación actual. Las cirugías sin ninguna opción se descartan y quedan sin programar.
+	\item \textbf{Asignación.} Para la cirugía elegida, cada opción $o=(d,b,r,k)$ recibe un costo
+	\begin{equation}
+		c(o)=\mathrm{dem}(r,d,b)+\mathrm{dem}(k,d,b)+\lambda\,\pi(o),
+		\label{eq:costo}
+	\end{equation}
+	donde $\mathrm{dem}$ cuenta cuántas opciones de las cirugías pendientes usarían ese recurso en ese bloque, de modo que se evita consumir lo escaso que otras cirugías necesitan. El término $\pi(o)$ vale 1 si la sala está en una zona que el departamento del cirujano aún no usa (habiendo ya usado otra) y 0 en caso contrario, con $\lambda=0{,}5$.
+	\item Se elige la opción de menor costo. Con $\alpha=0$ el método es determinista.
+\end{enumerate}
+
+\subsection{Búsqueda local (VND)}
+
+Se usa un descenso de vecindario variable con primera mejora: cuando un vecindario encuentra una mejora, esta se aplica y la búsqueda reinicia en N1. El proceso termina cuando ningún vecindario mejora (con un límite de 30\,s). La Tabla~\ref{tab:vecindarios} resume los seis vecindarios.
+
+\begin{table}[t]
+	\caption{Vecindarios del VND}
+	\label{tab:vecindarios}
+	\centering
+	\small
+	\begin{tabular}{@{}l p{4.6cm} l@{}}
+		\hline
+		Vecindario & Movimiento & Mejora \\
+		\hline
+		N1 & Insertar una cirugía sin programar en un hueco libre & $N$ \\
+		N2 & Cadena de expulsión de profundidad 1 & $N$ \\
+		N3 & Cadena de expulsión de profundidad 2 & $N$ \\
+		N4 & Sacar una cirugía programada e insertar dos sin programar & $N$ \\
+		N5 & Reubicar una cirugía (día, bloque, sala, cirujano) & $(D,M)$ \\
+		N6 & Intercambiar las salas de dos cirugías del mismo día y bloque & $(D,M)$ \\
+		\hline
+	\end{tabular}
+\end{table}
+
+En una cadena de expulsión, la cirugía ocupa un hueco ya tomado, se expulsan las cirugías que estorban (a lo sumo dos: la de la sala y la del cirujano) y todas deben reinsertarse de forma recursiva. Si alguna no puede reinsertarse, el movimiento se deshace mediante una bitácora de cambios. Como las cadenas exigen reinsertar a todas las cirugías expulsadas, nunca cambian \emph{cuáles} cirugías quedan por fuera; N4 cubre ese caso.
+
+\subsection{GRASP}
+
+GRASP repite el constructivo con aleatorización: entre las opciones de la cirugía elegida se forma la lista restringida de candidatos $\{o : c(o)\le c_{\min}+\alpha\,(c_{\max}-c_{\min})\}$ y se escoge una al azar. Cada solución se mejora con el VND. La iteración inicial es el constructivo voraz ($\alpha=0$), seguida de 20 iteraciones con $\alpha=0{,}3$. Se conserva la mejor solución según la tupla $(N,-D,-M)$.
+
+\subsection{Búsqueda de vecindarios grandes (LNS)}
+
+El LNS parte de la solución del VND y repite 200 veces un ciclo de destruir y reparar:
+
+\begin{enumerate}
+	\item \textbf{Destruir.} Se toma una cirugía sin programar (o una al azar si todas están programadas) y se retiran hasta $k=4$ cirugías que ocupan salas o cirujanos que esa cirugía podría usar.
+	\item \textbf{Reparar.} Se completa la solución con el mismo constructivo ($\alpha=0{,}2$) y se aplica el VND.
+	\item \textbf{Aceptación.} Se acepta la nueva solución si no empeora la tupla, lo que permite moverse por mesetas. Se guarda la mejor solución encontrada.
+\end{enumerate}
+
+\subsection{Modelo exacto de referencia}
+
+El óptimo se calcula con un modelo entero resuelto con HiGHS, que incluye las restricciones~\eqref{eq:cirugia}--\eqref{eq:cirujano}, en dos etapas. La primera maximiza $N$. La segunda fija ese valor y minimiza $D$ mediante las variables auxiliares $z_{dep,zona}$ (el departamento usa la zona) y $u_{dep}$ (el departamento tiene cirugías), con $x_{s,d,b,r,k}\le z_{dep(k),zona(r)}$ y $D=\sum z-\sum u$. El límite de tiempo es de 120\,s por etapa. El modelo exacto cubre los dos primeros niveles del objetivo, no $M$.
+
+\subsection{Diseño experimental}
+
+\begin{itemize}
+	\item \textbf{Instancias reales:} las 10 entregadas con el taller (18 a 34 cirugías).
+	\item \textbf{Corridas:} GRASP y LNS con 5 semillas independientes por instancia (1 a 5).
+	\item \textbf{Métricas:} $N$, $D$ y $M$; la brecha $100\,(N_{opt}-N_{mejor})/N_{opt}$; y el tiempo de cómputo de cada método.
+	\item \textbf{Validación:} toda solución se verifica contra las restricciones del problema antes de reportarse.
+	\item \textbf{Junta clínica (Punto~2):} para cada departamento se calcula la intersección de los días disponibles de sus cirujanos y, para cada día candidato, cuántas cirugías pierden opciones o quedan bloqueadas. Se reserva el día de menor costo, se retira de la disponibilidad de los cirujanos del departamento y se vuelve a ejecutar el método.
+\end{itemize}

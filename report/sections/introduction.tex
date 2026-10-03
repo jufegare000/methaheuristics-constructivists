@@ -1,11 +1,12 @@
-\section{Introduction}
+\section{Introducción}
 \label{sec:introduction}
-LOREM
-\subsection{Research questions}
+La programación semanal de quirófanos es un problema recurrente en hospitales debido a que decenas de procedimientos de distintas especialidades deben asignarse a un día, un bloque horario, una sala y un cirujano, bajo un conjunto limitado de recursos. Cada cirugía exige una sala con el equipamiento adecuado y un cirujano certificado para el procedimiento y disponible ese día. Además, ninguna sala ni cirujano puede atender más de una cirugía por bloque.
 
-\subsection{Contributions}
+Cuando los recursos no alcanzan para atender todas las solicitudes, el problema se convierte en uno de optimización combinatoria. Su variante de decisión, asignar simultáneamente día, bloque, sala y cirujano, tiene estructura de asignación con restricciones de compatibilidad, por lo que el tamaño del espacio de búsqueda crece rápidamente con el número de cirugías. Para estos problemas, las heurísticas constructivas y las metaheurísticas ofrecen soluciones de buena calidad en tiempos cortos y sin depender de un solver.
 
+En este trabajo se aborda el problema con un objetivo lexicográfico: primero se maximiza el número de cirugías con asignación completa y válida. Entre soluciones con igual número de cirugías, se minimiza la dispersión departamental, es decir, el número de alas del hospital que usa cada departamento, para facilitar la rotación de cirujanos y equipos. Se propone una heurística constructiva que prioriza la cirugía más restringida y elige la opción que menos presiona los recursos pendientes. Esta se mejora con una búsqueda local de vecindario variable (VND) y se compara con GRASP y con una búsqueda de vecindarios grandes (LNS). La calidad de las soluciones se evalúa frente al óptimo de un modelo de programación entera resuelto con HiGHS.
 
+Las contribuciones son: (i) una heurística constructiva y una búsqueda local con seis vecindarios, uno de ellos diseñado para cambiar cuáles cirugías quedan sin programar; (ii) una comparación experimental de constructivo, VND, GRASP y LNS en instancias sintéticas y en diez instancias reales; y (iii) una discusión de cómo incorporar el día libre común para la junta clínica de cada departamento.
 
-The rest of this article is organized as follows: Section~\ref{sec:related_work}  summarizes related work; Section~\ref{sec:methodology} describes the data pipeline and the congruence
-index methodology; Section~\ref{sec:results}  presents the results; Section~\ref{sec:discussion}  discusses limitations and implications; and Section~\ref{sec:conclusion} concludes.
+El resto del documento se organiza así: la Sección II describe la metodología, la Sección III presenta los resultados y la Sección IV expone las conclusiones.
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.27)  3 OCT 2026 11:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.27)  3 OCT 2026 18:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -492,27 +492,35 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
 (/app/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./sections/abstract.tex)
-Underfull \hbox (badness 7362) in paragraph at lines 40--42
-[]\OT1/ptm/b/it/9 Index Terms\OT1/ptm/b/n/9 ---Metaheur[]^^Psticas, M[]etodos c
-on-struc-tivis-tas,
+(./sections/introduction.tex
+Underfull \hbox (badness 2035) in paragraph at lines 5--6
+[]\OT1/ptm/m/n/10 Cuando los re-cur-sos no al-can-zan para aten-der to-das
  []
 
-(./sections/introduction.tex) (./sections/related_work.tex)
-(./sections/methodology.tex) (./sections/results.tex)
-(./sections/discussion.tex) (./sections/conclusion.tex) (./main.bbl
+) (./sections/methodology.tex [1{/app/texlive/texmf-var/fonts/map/pdftex/updmap
+/pdftex.map}{/app/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \end{thebibliography}
-                          
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+]
+Underfull \hbox (badness 5667) in paragraph at lines 38--39
+\OT1/ptm/m/it/10 op-ciones factibles \OT1/ptm/m/n/10 en ese mo-mento, re-cal-cu
+-ladas
+ []
 
-)
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--66
+[]|\OT1/ptm/m/n/9 Intercambiar las salas de dos
+ []
+
+
+Underfull \hbox (badness 5245) in paragraph at lines 96--97
+[]\OT1/ptm/b/n/10 M[]etricas: $\OML/cmm/m/it/10 N$\OT1/ptm/m/n/10 , $\OML/cmm/m
+/it/10 D$ \OT1/ptm/m/n/10 y $\OML/cmm/m/it/10 M$\OT1/ptm/m/n/10 ; la brecha $\O
+T1/cmr/m/n/10 100 (\OML/cmm/m/it/10 N[] \OMS/cmsy/m/n/10 ^^@
+ []
+
+) (./sections/results.tex [2]) (./sections/discussion.tex [3])
+(./sections/conclusion.tex)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -524,10 +532,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[1{/app/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/app/texlive/texm
-f-dist/fonts/enc/dvips/base/8r.enc}
-
-
+[4
 
 ] (./main.aux)
  ***********
@@ -535,24 +540,34 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FAD016E1B95320D05BC4B7FC2DF62A99;942.
+(rerunfilecheck)             Checksum: 4D583CE735BBA48617D0860F469E8015;2212.
  ) 
 Here is how much of TeX's memory you used:
- 11481 strings out of 467363
- 178000 string characters out of 5419001
- 602231 words of memory out of 6000000
- 40391 multiletter control sequences out of 15000+600000
- 665229 words of font info for 121 fonts, out of 8000000 for 9000
+ 11508 strings out of 467363
+ 177994 string characters out of 5419001
+ 625782 words of memory out of 6000000
+ 40387 multiletter control sequences out of 15000+600000
+ 670683 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,14n,79p,251b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></app/texli
-ve/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></app/texlive/texmf-dist/fonts/t
-ype1/urw/times/utmbi8a.pfb></app/texlive/texmf-dist/fonts/type1/urw/times/utmr8
-a.pfb></app/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (1 page, 57968 bytes).
+ 75i,14n,79p,1265b,574s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></app/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></app/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi5.pfb></app/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi7.pfb></app/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9
+.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></app/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></app/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr9.pfb></app/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></app/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy7.pfb></app/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
+.pfb></app/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></app/texlive/te
+xmf-dist/fonts/type1/urw/times/utmbi8a.pfb></app/texlive/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></app/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pf
+b>
+Output written on main.pdf (4 pages, 194693 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 206 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

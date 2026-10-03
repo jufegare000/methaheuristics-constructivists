@@ -7,7 +7,6 @@ C11,Neuro,Ma,AM,R3,Z0,Sg3,Dep0,ok
 C12,Neuro,Ma,AM,R6,Z0,Sg6,Dep1,ok
 C17,Neuro,Ma,PM,R3,Z0,Sg3,Dep0,ok
 C0,Neuro,Ma,PM,R6,Z0,Sg6,Dep1,ok
-C10,Cardio,Mi,AM,R1,Z0,Sg2,Dep1,ok
 C16,General,Mi,AM,R2,Z0,Sg0,Dep0,ok
 C7,Neuro,Mi,AM,R3,Z0,Sg6,Dep1,ok
 C2,Neuro,Mi,AM,R6,Z0,Sg3,Dep0,ok
@@ -17,5 +16,6 @@ C8,Orto,J,AM,R3,Z0,Sg1,Dep0,ok
 C4,Neuro,J,AM,R6,Z0,Sg3,Dep0,ok
 C5,General,J,PM,R2,Z0,Sg0,Dep0,ok
 C13,Neuro,J,PM,R6,Z0,Sg3,Dep0,ok
+C10,Cardio,V,AM,R1,Z0,Sg2,Dep1,ok
 C15,Orto,V,AM,R2,Z0,Sg1,Dep0,ok
 C1,General,V,AM,R6,Z0,Sg7,Dep0,ok
