@@ -1,2 +1,13 @@
-\section{Conclusions}
+\section{Conclusiones}
 \label{sec:conclusion}
+
+
+Se abordó la programación semanal de quirófanos con un objetivo lexicográfico que prioriza el número de cirugías programadas y, después, la concentración de cada departamento en pocas zonas. Se desarrollaron una heurística constructiva, una búsqueda local de vecindario variable, GRASP y una búsqueda de vecindarios grandes, y se evaluaron frente al óptimo de un modelo entero en las 10 instancias reales del taller.
+
+GRASP y LNS alcanzaron el óptimo lexicográfico en las 10 instancias. La búsqueda local (VND) alcanzó el número óptimo de cirugías en las 10, pero su dispersión total fue de 11 frente a 6 del óptimo, y el constructivo solo quedó por debajo del óptimo en $N$ en dos instancias. En estas instancias, entonces, la diferencia entre métodos está en la dispersión y no en el número de cirugías.
+
+En tiempo de cómputo, el constructivo y el VND tardaron menos de 0,1\,s, GRASP 0,13\,s en promedio y LNS 1,9\,s, mientras que HiGHS resolvió todas las instancias en menos de 0,5\,s. Por tanto, con instancias de este tamaño las heurísticas no ofrecen una ventaja de tiempo sobre el método exacto, y estos experimentos no permiten concluir cómo se comportarían con instancias mayores.
+
+Reservar un día común para la junta clínica de cada departamento no tuvo costo en 4 de las 10 instancias y redujo de 178 a 156 el total de cirugías programadas (12,4\,\%) con la estrategia propuesta. Este valor es una cota superior del costo real, porque el día de cada departamento se elige de forma voraz e independiente y la solución con junta no se validó con el modelo exacto.
+
+Las conclusiones están limitadas por el tamaño de las instancias (entre 18 y 34 cirugías) y por el uso de una única configuración de parámetros para GRASP y LNS. Como trabajo futuro se propone: evaluar los métodos en instancias de mayor tamaño; incorporar el día de junta como decisión del modelo y de la búsqueda, y no como un paso previo; añadir un criterio de parada al LNS; e incluir el tercer criterio de desempate en el modelo exacto.
