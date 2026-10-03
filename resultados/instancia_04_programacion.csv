@@ -1,0 +1,29 @@
+cirugia,tipo,dia,bloque,sala,zona,cirujano,departamento,estado
+C15,General,L,AM,R2,Z0,Sg3,Dep3,ok
+C1,Neuro,L,AM,R4,Z1,Sg0,Dep0,ok
+C25,General,L,PM,R2,Z0,Sg3,Dep3,ok
+C10,Neuro,L,PM,R4,Z1,Sg0,Dep0,ok
+C12,Gineco,Mi,AM,R2,Z0,Sg1,Dep1,ok
+C27,Gineco,Mi,PM,R2,Z0,Sg1,Dep1,ok
+C23,Cardio,J,AM,R1,Z0,Sg7,Dep0,ok
+C16,General,J,AM,R2,Z0,Sg3,Dep3,ok
+C14,Orto,J,AM,R3,Z0,Sg4,Dep1,ok
+C0,Neuro,J,AM,R4,Z1,Sg0,Dep0,ok
+C20,Uro,J,PM,R0,Z1,Sg7,Dep0,ok
+C7,Gineco,J,PM,R2,Z0,Sg2,Dep1,ok
+C11,Neuro,J,PM,R4,Z1,Sg0,Dep0,ok
+C17,Uro,V,AM,R0,Z1,Sg7,Dep0,ok
+C5,General,V,AM,R2,Z0,Sg3,Dep3,ok
+C2,Orto,V,AM,R3,Z0,Sg6,Dep2,ok
+C19,General,V,PM,R2,Z0,Sg3,Dep3,ok
+C18,Cardio,V,PM,R5,Z0,Sg7,Dep0,ok
+C3,Neuro,,,,,,,SIN PROGRAMAR
+C4,Neuro,,,,,,,SIN PROGRAMAR
+C6,Gineco,,,,,,,SIN PROGRAMAR
+C8,Gineco,,,,,,,SIN PROGRAMAR
+C9,Cardio,,,,,,,SIN PROGRAMAR
+C13,Gineco,,,,,,,SIN PROGRAMAR
+C21,Neuro,,,,,,,SIN PROGRAMAR
+C22,Gineco,,,,,,,SIN PROGRAMAR
+C24,General,,,,,,,SIN PROGRAMAR
+C26,Neuro,,,,,,,SIN PROGRAMAR

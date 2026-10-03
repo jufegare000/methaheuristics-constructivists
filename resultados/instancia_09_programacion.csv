@@ -1,0 +1,31 @@
+cirugia,tipo,estado,dia,bloque,sala,zona,cirujano,departamento
+C12,Gineco,ok,L,AM,R4,Z2,Sg5,Dep1
+C13,Oftalmo,ok,Ma,AM,R0,Z0,Sg6,Dep4
+C19,Cardio,ok,Ma,AM,R3,Z0,Sg0,Dep4
+C9,Plastica,ok,Ma,AM,R4,Z2,Sg4,Dep0
+C11,Oftalmo,ok,Ma,PM,R0,Z0,Sg6,Dep4
+C20,Cardio,ok,Ma,PM,R3,Z0,Sg0,Dep4
+C2,Plastica,ok,Ma,PM,R4,Z2,Sg4,Dep0
+C29,Neuro,ok,Mi,PM,R0,Z0,Sg2,Dep2
+C22,Orto,ok,Mi,PM,R2,Z1,Sg7,Dep3
+C26,General,ok,Mi,PM,R3,Z0,Sg3,Dep2
+C7,Plastica,ok,Mi,PM,R4,Z2,Sg4,Dep0
+C27,Uro,ok,V,AM,R1,Z0,Sg6,Dep4
+C6,Cardio,ok,V,AM,R3,Z0,Sg0,Dep4
+C18,Uro,ok,V,PM,R1,Z0,Sg6,Dep4
+C15,Cardio,ok,V,PM,R3,Z0,Sg0,Dep4
+C0,Oftalmo,SIN PROGRAMAR,,,,,,
+C1,Orto,SIN PROGRAMAR,,,,,,
+C3,Neuro,SIN PROGRAMAR,,,,,,
+C4,Uro,SIN PROGRAMAR,,,,,,
+C5,Cardio,SIN PROGRAMAR,,,,,,
+C8,Plastica,SIN PROGRAMAR,,,,,,
+C10,Plastica,SIN PROGRAMAR,,,,,,
+C14,Oftalmo,SIN PROGRAMAR,,,,,,
+C16,Gineco,SIN PROGRAMAR,,,,,,
+C17,Oftalmo,SIN PROGRAMAR,,,,,,
+C21,Plastica,SIN PROGRAMAR,,,,,,
+C23,Neuro,SIN PROGRAMAR,,,,,,
+C24,Gineco,SIN PROGRAMAR,,,,,,
+C25,Uro,SIN PROGRAMAR,,,,,,
+C28,Neuro,SIN PROGRAMAR,,,,,,

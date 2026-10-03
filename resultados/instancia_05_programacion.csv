@@ -1,0 +1,31 @@
+cirugia,tipo,dia,bloque,sala,zona,cirujano,departamento,estado
+C26,Oftalmo,L,AM,R0,Z1,Sg1,Dep2,ok
+C14,Cardio,L,AM,R3,Z1,Sg5,Dep0,ok
+C24,Uro,L,PM,R0,Z1,Sg5,Dep0,ok
+C10,General,L,PM,R1,Z1,Sg9,Dep2,ok
+C12,Orto,L,PM,R3,Z1,Sg0,Dep3,ok
+C18,Oftalmo,Ma,AM,R0,Z1,Sg1,Dep2,ok
+C0,Orto,Ma,AM,R3,Z1,Sg6,Dep3,ok
+C6,Neuro,Ma,AM,R6,Z1,Sg7,Dep2,ok
+C11,Orto,Ma,PM,R3,Z1,Sg6,Dep3,ok
+C15,Neuro,Ma,PM,R6,Z1,Sg7,Dep2,ok
+C16,Gineco,Mi,AM,R0,Z1,Sg8,Dep0,ok
+C13,Orto,Mi,AM,R3,Z1,Sg0,Dep3,ok
+C9,Orto,Mi,PM,R3,Z1,Sg0,Dep3,ok
+C1,Uro,J,AM,R0,Z1,Sg5,Dep0,ok
+C17,Orto,J,AM,R3,Z1,Sg6,Dep3,ok
+C4,Gineco,J,PM,R0,Z1,Sg8,Dep0,ok
+C23,Cardio,J,PM,R3,Z1,Sg5,Dep0,ok
+C3,Gineco,V,AM,R0,Z1,Sg8,Dep0,ok
+C29,General,V,AM,R1,Z1,Sg2,Dep2,ok
+C20,Neuro,V,AM,R6,Z1,Sg7,Dep2,ok
+C7,Gineco,V,PM,R0,Z1,Sg8,Dep0,ok
+C19,General,V,PM,R1,Z1,Sg2,Dep2,ok
+C28,Neuro,V,PM,R3,Z1,Sg7,Dep2,ok
+C2,Cardio,,,,,,,SIN PROGRAMAR
+C5,Cardio,,,,,,,SIN PROGRAMAR
+C8,Gineco,,,,,,,SIN PROGRAMAR
+C21,Orto,,,,,,,SIN PROGRAMAR
+C22,Uro,,,,,,,SIN PROGRAMAR
+C25,Orto,,,,,,,SIN PROGRAMAR
+C27,Uro,,,,,,,SIN PROGRAMAR

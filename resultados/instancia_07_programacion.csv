@@ -1,0 +1,31 @@
+cirugia,tipo,estado,dia,bloque,sala,zona,cirujano,departamento
+C25,Orto,ok,L,AM,R0,Z0,Sg0,Dep0
+C8,Oftalmo,ok,L,PM,R0,Z0,Sg4,Dep3
+C28,Gineco,ok,L,PM,R4,Z2,Sg2,Dep2
+C19,General,ok,Ma,AM,R3,Z1,Sg6,Dep0
+C23,General,ok,Ma,PM,R3,Z1,Sg6,Dep0
+C2,Oftalmo,ok,Mi,AM,R0,Z0,Sg4,Dep3
+C3,Cardio,ok,Mi,AM,R4,Z2,Sg1,Dep1
+C7,Oftalmo,ok,Mi,PM,R0,Z0,Sg4,Dep3
+C21,Cardio,ok,Mi,PM,R4,Z2,Sg1,Dep1
+C16,Uro,ok,J,AM,R2,Z0,Sg3,Dep3
+C20,General,ok,J,AM,R3,Z1,Sg6,Dep0
+C1,Cardio,ok,V,AM,R4,Z2,Sg1,Dep1
+C10,Oftalmo,ok,V,PM,R0,Z0,Sg5,Dep0
+C13,Cardio,ok,V,PM,R4,Z2,Sg1,Dep1
+C0,Neuro,SIN PROGRAMAR,,,,,,
+C4,General,SIN PROGRAMAR,,,,,,
+C5,Gineco,SIN PROGRAMAR,,,,,,
+C6,Neuro,SIN PROGRAMAR,,,,,,
+C9,Oftalmo,SIN PROGRAMAR,,,,,,
+C11,Uro,SIN PROGRAMAR,,,,,,
+C12,Cardio,SIN PROGRAMAR,,,,,,
+C14,Orto,SIN PROGRAMAR,,,,,,
+C15,Uro,SIN PROGRAMAR,,,,,,
+C17,Cardio,SIN PROGRAMAR,,,,,,
+C18,General,SIN PROGRAMAR,,,,,,
+C22,Cardio,SIN PROGRAMAR,,,,,,
+C24,Uro,SIN PROGRAMAR,,,,,,
+C26,Orto,SIN PROGRAMAR,,,,,,
+C27,General,SIN PROGRAMAR,,,,,,
+C29,Cardio,SIN PROGRAMAR,,,,,,
