@@ -147,7 +147,7 @@ def validar(sol):
 
 
 # ----------------------------------------------------------------------------- Punto 1
-def constructivo(ins, alpha=0.0, rng=None, lam=0.5):
+def constructivo(ins, alpha=0.0, rng=None, lam=0.5, sol=None):
     """Voraz (alpha=0) o GRASP (alpha>0).
     1) Selección dinámica de la cirugía con MENOS opciones factibles (MRV / tipo DSatur).
     2) Para ella, se elige la opción de menor costo:
@@ -156,10 +156,12 @@ def constructivo(ins, alpha=0.0, rng=None, lam=0.5):
        (se reserva lo escaso para quien más lo necesita).
        penalización de zona = 1 si la sala está en una zona que el departamento del cirujano
        aún no usa (y ya usa alguna otra).
+    Si se pasa `sol` (parcial), completa solo las cirugías sin programar: así sirve de
+    operador de reparación en LNS.
     """
     rng = rng or random.Random(0)
-    sol = Solucion(ins)
-    pendientes = set(ins.S)
+    sol = sol if sol is not None else Solucion(ins)
+    pendientes = {s for s in ins.S if sol.x[s] is None}
     while pendientes:
         opts = {s: sol.opciones(s) for s in pendientes}
         for s in [s for s in pendientes if not opts[s]]:
@@ -263,12 +265,67 @@ def N_swap_salas(sol):
     return False
 
 
+def N_sacar1_meter2(sol, prof=1):
+    """Saca una cirugía programada c y trata de programar DOS de las no programadas
+    (con cadenas de expulsión de profundidad `prof`). Ganancia neta +1.
+    Cubre el caso que las cadenas no ven: el óptimo deja por fuera a una cirugía distinta."""
+    sin = [s for s, o in sol.x.items() if o is None]
+    if len(sin) < 1:
+        return False
+    for c in [s for s, o in sol.x.items() if o is not None]:
+        mark = len(sol.log); sol.remove(c)
+        metidas = 0
+        for u in sin:
+            m2 = len(sol.log)
+            if insertar(sol, u, prof, frozenset({c})):
+                metidas += 1
+                if metidas == 2:
+                    return True
+            else:
+                sol.rollback(m2)
+        sol.rollback(mark)
+    return False
+
+
+def lns(sol, iters=200, k=4, alpha=0.2, seed=0, t_lim=20.0):
+    """Large Neighborhood Search (destruir y reparar) sobre una solución ya pulida por VND.
+    Destruir: se escoge una cirugía no programada u (o una al azar si todas están programadas)
+    y se retiran hasta k cirugías que ocupan salas o cirujanos que u podría usar.
+    Reparar: el mismo constructivo (MRV + RCL con alpha) completa la solución, y luego VND.
+    Aceptación: si no empeora (permite moverse por mesetas); se guarda la mejor."""
+    rng = random.Random(seed); ins = sol.ins
+    cur = sol.copia(); best = cur.copia(); t0 = time.time()
+    for _ in range(iters):
+        if time.time() - t0 > t_lim:
+            break
+        s = cur.copia()
+        sin = [x for x, o in s.x.items() if o is None]
+        foco = rng.choice(sin) if sin else rng.choice(ins.S)
+        rel = set()
+        for d, b, r, kk in s.opciones(foco, ignorar_ocupacion=True):
+            for occ in (s.room.get((r, d, b)), s.surg.get((kk, d, b))):
+                if occ is not None and occ != foco:
+                    rel.add(occ)
+        if not rel:
+            rel = {x for x, o in s.x.items() if o is not None}
+        for x in rng.sample(sorted(rel), min(k, len(rel))):
+            s.remove(x)
+        s.log.clear()
+        constructivo(ins, alpha, rng, sol=s)
+        busqueda_local(s, t_lim=2.0)
+        if s.objetivo() >= cur.objetivo():
+            cur = s
+            if s.objetivo() > best.objetivo():
+                best = s.copia()
+    return best
+
+
 def busqueda_local(sol, prof_max=2, t_lim=30.0):
-    """VND con mejor-primera: N1 inserción directa, N2 expulsión prof. 1, N3 expulsión prof. 2,
-    N4 reubicación por zona, N5 swap de salas. Al mejorar se reinicia desde N1."""
+    """VND con primera mejora: N1 inserción directa, N2 expulsión prof. 1, N3 expulsión prof. 2,
+    N4 sacar 1 – meter 2, N5 reubicación por zona, N6 swap de salas. Al mejorar se reinicia en N1."""
     vecindarios = [lambda s: N_insercion(s, 0)]
     vecindarios += [lambda s, p=p: N_insercion(s, p) for p in range(1, prof_max + 1)]
-    vecindarios += [N_reubicar, N_swap_salas]
+    vecindarios += [N_sacar1_meter2, N_reubicar, N_swap_salas]
     t0 = time.time(); j = 0
     while j < len(vecindarios) and time.time() - t0 < t_lim:
         if vecindarios[j](sol):
